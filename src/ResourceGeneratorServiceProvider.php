@@ -9,7 +9,8 @@ use Illuminate\Support\ServiceProvider;
  *
  * @author tibo
  */
-class ResourceGeneratorServiceProvider extends ServiceProvider {
+class ResourceGeneratorServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.

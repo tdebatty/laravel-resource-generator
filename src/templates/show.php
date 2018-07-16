@@ -16,11 +16,14 @@ $Models = str_plural($Model);
                     <p>Name: {{ $<?= $model ?>->name }}</p>
 
                     <div>
-                        <a class="btn btn-primary" href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
+                        <a class="btn btn-primary"
+                           href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
                             Edit
                         </a>
 
-                        <form method="POST" action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $Model ?>' => $<?= $model ?>]) }}" style="display: inline-block">
+                        <form method="POST"
+                              action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $Model ?>' => $<?= $model ?>]) }}"
+                              style="display: inline-block">
                             {{ csrf_field() }}
                             {{ method_field("DELETE") }}
                             <button class="btn btn-danger">

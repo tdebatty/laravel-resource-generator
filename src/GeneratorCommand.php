@@ -43,7 +43,8 @@ class GeneratorCommand extends Command
      */
     public function __construct(
         \Illuminate\Config\Repository $config,
-        \Illuminate\Filesystem\Filesystem $files) {
+        \Illuminate\Filesystem\Filesystem $files
+    ) {
 
         $this->config = $config;
         $this->files = $files;
