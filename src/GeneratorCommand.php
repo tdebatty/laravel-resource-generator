@@ -74,10 +74,10 @@ class GeneratorCommand extends Command
             "--resource" => true,
             "name" => $model]);
 
-        $this->info("Generate routes...");
+        $this->info("Generate routes: routes/web.php");
         $this->files->append("routes/web.php", "\nRoute::resource('app/$model_plural', '$controller_name');");
 
-        $this->info("Generate views...");
+        $this->info("Generate views: resources/views/" . $model_lower);
         $this->files->makeDirectory("resources/views/" . $model_lower);
 
 
@@ -105,7 +105,7 @@ class GeneratorCommand extends Command
             ->render();
         $this->files->put("resources/views/" . $model_lower . "/show.blade.php", $show);
 
-        $this->info("Generate controller...");
+        $this->info("Generate controller: app/Http/Controllers/" . $model . "Controller.php");
         $controller = $factory->make('controller')
             ->with('Model', $model)
             ->render();
