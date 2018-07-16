@@ -23,14 +23,17 @@ class GeneratorCommand extends Command
      * @var string
      */
     protected $name = 'resource-generator:generate';
+
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate a new IDE Helper file.';
+    protected $description = 'Generate a full source code for a Resource.';
+
     /** @var \Illuminate\Config\Repository */
     protected $config;
+
     /** @var \Illuminate\Filesystem\Filesystem */
     protected $files;
 
@@ -61,7 +64,7 @@ class GeneratorCommand extends Command
         $model = $this->argument('model');
 
         if (ucfirst($model) !== $model) {
-            $this->error("Must start with an upper case");
+            $this->error("Model parameter must be CamelCase");
             return;
         }
 
@@ -126,7 +129,7 @@ class GeneratorCommand extends Command
     protected function getArguments()
     {
         return array(
-            array('model', InputArgument::REQUIRED, 'The model name'),
+            array('model', InputArgument::REQUIRED, 'The model name (CamelCase)'),
         );
     }
     /**

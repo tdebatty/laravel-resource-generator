@@ -40,7 +40,7 @@ The default controller and views assume resources have a *name* field. You have 
 $ nano database/migrations/*_create_posts_table.php
 ```
 
-You can now migrate and admire the result:
+You can now migrate and check the result:
 
 ```
 $ php artisan migrate
