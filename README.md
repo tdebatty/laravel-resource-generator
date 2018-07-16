@@ -13,10 +13,16 @@ With this plugin, you immediately get working code:
 * a fully functional controller with request validation
 * basic views to list, create, modify and delete your resource
 
-
+## Installation
 
 ```
 $ composer require tdebatty/laravel-resource-generator
+```
+
+## Example
+
+
+```
 $ php artisan resource-generator:generate Post
 Generate migration and model...
 Generate routes...
@@ -26,7 +32,17 @@ Done!
 You may now fill the migration file
 And then run php artisan migrate
 Your resources will be available at http://127.0.0.1:8000/app/posts
-$ nano database/migrations/2018_07_16_092341_create_posts_table.php
+```
+
+The default controller and views assume resources have a *name* field. You have to add this field manually to your migration file (and other fields according to your needs):
+
+```
+$ nano database/migrations/*_create_posts_table.php
+```
+
+You can now migrate and admire the result:
+
+```
 $ php artisan migrate
 $ php artisan serve
 ```
@@ -38,3 +54,6 @@ $ php artisan serve
 ![](./doc/edit.png)
 
 
+## Compatibility
+
+Currently generates code for Laravel 5.6 (Bootstrap 4).
