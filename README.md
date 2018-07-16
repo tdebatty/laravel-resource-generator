@@ -57,3 +57,4 @@ $ php artisan serve
 ## Compatibility
 
 Currently generates code for Laravel 5.6 (Bootstrap 4).
+The generated code is vanilla Laravel code (i.e. views use Blade syntax with no additional libraries or dependencies).
