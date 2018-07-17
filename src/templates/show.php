@@ -18,7 +18,7 @@ $Models = str_plural($Model);
                     <div>
                         <a class="btn btn-primary"
                            href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
-                            Edit
+                            <?= $icons['edit'] ?> Edit
                         </a>
 
                         <form method="POST"
@@ -27,7 +27,7 @@ $Models = str_plural($Model);
                             {{ csrf_field() }}
                             {{ method_field("DELETE") }}
                             <button class="btn btn-danger">
-                                Delete
+                                <?= $icons['delete'] ?> Delete
                             </button>
                         </form>
                     </div>

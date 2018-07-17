@@ -58,3 +58,7 @@ $ php artisan serve
 
 Currently generates code for Laravel 5.6 (Bootstrap 4).
 The generated code is vanilla Laravel code (i.e. views use Blade syntax with no additional libraries or dependencies).
+
+The generator can also add icons using following icon sets:
+
+* Font Awesome 5 : ```php artisan resource-generator:generate Model -i fa```

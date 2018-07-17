@@ -12,7 +12,7 @@ $Models = str_plural($Model);
     <h1><?= $Models ?></h1>
     <p>
         <a href="{{ action('<?= $Model ?>Controller@create') }}" class="btn btn-primary">
-            New
+            <?= $icons['new'] ?> New
         </a>
     </p>
 
@@ -27,12 +27,12 @@ $Models = str_plural($Model);
             <td class="text-right">
                 <a class="btn btn-primary btn-sm"
                    href="{{ action('<?= $Model ?>Controller@show', ['<?= $Model ?>' => $<?= $model ?>]) }}">
-                    Show
+                    <?= $icons['show'] ?> Show
                 </a>
 
                 <a class="btn btn-primary btn-sm"
                    href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
-                    Edit
+                    <?= $icons['edit'] ?> Edit
                 </a>
 
                 <form method="POST"
@@ -41,7 +41,7 @@ $Models = str_plural($Model);
                     {{ csrf_field() }}
                     {{ method_field("DELETE") }}
                     <button class="btn btn-danger btn-sm">
-                        Delete
+                        <?= $icons['delete'] ?> Delete
                     </button>
                 </form>
             </td>

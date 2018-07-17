@@ -46,8 +46,7 @@ class GeneratorCommand extends Command
      */
     public function __construct(
         \Illuminate\Config\Repository $config,
-        \Illuminate\Filesystem\Filesystem $files
-    ) {
+        \Illuminate\Filesystem\Filesystem $files) {
 
         $this->config = $config;
         $this->files = $files;
@@ -62,6 +61,7 @@ class GeneratorCommand extends Command
     public function handle()
     {
         $model = $this->argument('model');
+        $icons = $this->option('icons');
 
         if (ucfirst($model) !== $model) {
             $this->error("Model parameter must be CamelCase");
@@ -96,16 +96,19 @@ class GeneratorCommand extends Command
         $factory->addExtension('php', 'php');
         $index = $factory->make('index')
             ->with('Model', $model)
+            ->with("icons", $this->icons($icons))
             ->render();
         $this->files->put("resources/views/" . $model_lower . "/index.blade.php", $index);
 
         $edit = $factory->make('edit')
             ->with('Model', $model)
+            ->with("icons", $this->icons($icons))
             ->render();
         $this->files->put("resources/views/" . $model_lower . "/edit.blade.php", $edit);
 
         $show = $factory->make('show')
             ->with('Model', $model)
+            ->with("icons", $this->icons($icons))
             ->render();
         $this->files->put("resources/views/" . $model_lower . "/show.blade.php", $show);
 
@@ -129,7 +132,7 @@ class GeneratorCommand extends Command
     protected function getArguments()
     {
         return array(
-            array('model', InputArgument::REQUIRED, 'The model name (CamelCase)'),
+            ['model', InputArgument::REQUIRED, 'The model name (CamelCase)'],
         );
     }
     /**
@@ -139,6 +142,30 @@ class GeneratorCommand extends Command
      */
     protected function getOptions()
     {
-        return array();
+        return array(
+            ['icons', "i", InputOption::VALUE_OPTIONAL, 'The icon set to use (none, fa)', "none"]
+       );
+    }
+
+    public function icons($set) {
+        switch ($set) {
+            case "fa":
+                return [
+                    "new" => '<i class="fas fa-plus-circle"></i>',
+                    "edit" => '<i class="fas fa-edit"></i>',
+                    "show" => '<i class="fas fa-search"></i>',
+                    "delete" => '<i class="fas fa-times-circle"></i>',
+                    "ok" => '<i class="fas fa-check"></i>'
+                ];
+
+            default:
+                return [
+                    "new" => "",
+                    "edit" => "",
+                    "show" => "",
+                    "delete" => "",
+                    "ok" => ""
+                ];
+        }
     }
 }
