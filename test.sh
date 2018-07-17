@@ -1,7 +1,10 @@
 #!/bin/bash
 
-cd tests/laravel-5.6
+cd /tmp
+git clone git@github.com:tdebatty/laravel-resource-generator-test.git
+cd laravel-resource-generator-test/laravel-5.6
 composer install
+cp .env.example .env
 touch storage/app/db.sqlite
 php artisan migrate
 
