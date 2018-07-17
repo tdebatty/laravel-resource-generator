@@ -143,7 +143,7 @@ class GeneratorCommand extends Command
     protected function getOptions()
     {
         return array(
-            ['icons', "i", InputOption::VALUE_OPTIONAL, 'The icon set to use (none, fa)', "none"]
+            ['icons', "i", InputOption::VALUE_OPTIONAL, 'The icon set to use (none, fa, fa4)', "none"]
        );
     }
 
@@ -156,6 +156,15 @@ class GeneratorCommand extends Command
                     "show" => '<i class="fas fa-search"></i>',
                     "delete" => '<i class="fas fa-times-circle"></i>',
                     "ok" => '<i class="fas fa-check"></i>'
+                ];
+
+            case "fa4":
+                return [
+                    "new" => '<i class="fa fa-plus-circle" aria-hidden="true"></i>',
+                    "edit" => '<i class="fa fa-pencil" aria-hidden="true"></i>',
+                    "show" => '<i class="fa fa-search" aria-hidden="true"></i>',
+                    "delete" => '<i class="fa fa-times-circle" aria-hidden="true"></i>',
+                    "ok" => '<i class="fa fa-check" aria-hidden="true"></i>'
                 ];
 
             default:
