@@ -1,7 +1,8 @@
 <?php
+use Illuminate\Support\Str;
 $model = strtolower($Model);
-$models = str_plural($model);
-$Models = str_plural($Model);
+$models = Str::plural($model);
+$Models = Str::plural($Model);
 ?>
 @extends('layouts.app')
 
