@@ -2,6 +2,7 @@
 
 namespace tdebatty\LaravelResourceGenerator;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -69,7 +70,7 @@ class GeneratorCommand extends Command
         }
 
         $model_lower = strtolower($model);
-        $model_plural = str_plural($model_lower);
+        $model_plural = Str::plural($model_lower);
         $controller_name = $model . "Controller";
 
         $this->info("Generate migration and model...");
