@@ -42,7 +42,7 @@ class <?= $Model ?>Controller extends Controller
      */
     public function index()
     {
-        return view("<?= $model ?>.index", array("<?= $models ?>" => <?= $Model ?>::all()->sortBy("name")));
+        return view("<?= $model ?>.index", ["<?= $models ?>" => <?= $Model ?>::all()->sortBy("name")]);
     }
 
     /**
@@ -80,7 +80,7 @@ class <?= $Model ?>Controller extends Controller
      */
     public function show(<?= $Model ?> $<?= $model ?>)
     {
-        return view("<?= $model ?>.show", array("<?= $model ?>" => $<?= $model ?>));
+        return view("<?= $model ?>.show", ["<?= $model ?>" => $<?= $model ?>]);
     }
 
     /**
@@ -91,7 +91,7 @@ class <?= $Model ?>Controller extends Controller
      */
     public function edit(<?= $Model ?> $<?= $model ?>)
     {
-        return view("<?= $model ?>.edit", array("<?= $model ?>" => $<?= $model ?>));
+        return view("<?= $model ?>.edit", ["<?= $model ?>" => $<?= $model ?>]);
     }
 
     /**

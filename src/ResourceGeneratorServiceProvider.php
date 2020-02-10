@@ -35,6 +35,6 @@ class ResourceGeneratorServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return array('command.resource-generator.generate');
+        return ['command.resource-generator.generate'];
     }
 }

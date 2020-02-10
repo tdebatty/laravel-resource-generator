@@ -5,7 +5,6 @@ namespace tdebatty\LaravelResourceGenerator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Engines\PhpEngine;
 use Illuminate\View\Factory;
@@ -132,9 +131,9 @@ class GeneratorCommand extends Command
      */
     protected function getArguments()
     {
-        return array(
+        return [
             ['model', InputArgument::REQUIRED, 'The model name (CamelCase)'],
-        );
+        ];
     }
     /**
      * Get the console command options.
@@ -143,9 +142,9 @@ class GeneratorCommand extends Command
      */
     protected function getOptions()
     {
-        return array(
+        return [
             ['icons', "i", InputOption::VALUE_OPTIONAL, 'The icon set to use (none, fa, fa4)', "none"]
-       );
+       ];
     }
 
     public function icons($set) {
