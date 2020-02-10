@@ -46,7 +46,8 @@ class GeneratorCommand extends Command
      */
     public function __construct(
         \Illuminate\Config\Repository $config,
-        \Illuminate\Filesystem\Filesystem $files) {
+        \Illuminate\Filesystem\Filesystem $files
+    ) {
 
         $this->config = $config;
         $this->files = $files;
@@ -144,10 +145,11 @@ class GeneratorCommand extends Command
     {
         return [
             ['icons', "i", InputOption::VALUE_OPTIONAL, 'The icon set to use (none, fa, fa4)', "none"]
-       ];
+        ];
     }
 
-    public function icons($set) {
+    public function icons($set)
+    {
         switch ($set) {
             case "fa":
                 return [

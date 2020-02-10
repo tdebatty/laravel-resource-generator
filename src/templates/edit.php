@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Str;
+
 $model = strtolower($Model);
 $models = Str::plural($model);
 $Models = Str::plural($Model);
