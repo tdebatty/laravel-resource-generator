@@ -27,17 +27,17 @@ $Models = Str::plural($Model);
             <td>{{ $<?= $model ?>->name }}</td>
             <td class="text-right">
                 <a class="btn btn-primary btn-sm"
-                   href="{{ action('<?= $Model ?>Controller@show', ['<?= $Model ?>' => $<?= $model ?>]) }}">
+                   href="{{ action('<?= $Model ?>Controller@show', ['<?= $model ?>' => $<?= $model ?>]) }}">
                     <?= $icons['show'] ?> Show
                 </a>
 
                 <a class="btn btn-primary btn-sm"
-                   href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
+                   href="{{ action('<?= $Model ?>Controller@edit', ['<?= $model ?>' => $<?= $model ?>]) }}">
                     <?= $icons['edit'] ?> Edit
                 </a>
 
                 <form method="POST"
-                      action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $Model ?>' => $<?= $model ?>]) }}"
+                      action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $model ?>' => $<?= $model ?>]) }}"
                       style="display: inline-block">
                     {{ csrf_field() }}
                     {{ method_field("DELETE") }}

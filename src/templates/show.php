@@ -18,12 +18,12 @@ $Models = Str::plural($Model);
 
                     <div>
                         <a class="btn btn-primary"
-                           href="{{ action('<?= $Model ?>Controller@edit', ['<?= $Model ?>' => $<?= $model ?>]) }}">
+                           href="{{ action('<?= $Model ?>Controller@edit', ['<?= $model ?>' => $<?= $model ?>]) }}">
                             <?= $icons['edit'] ?> Edit
                         </a>
 
                         <form method="POST"
-                              action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $Model ?>' => $<?= $model ?>]) }}"
+                              action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $model ?>' => $<?= $model ?>]) }}"
                               style="display: inline-block">
                             {{ csrf_field() }}
                             {{ method_field("DELETE") }}
