@@ -24,7 +24,8 @@ $Models = Str::plural($Model);
                         </a>
 
                         <form method="POST"
-                              action="{{ action('<?= $Model ?>Controller@destroy', ['<?= $model ?>' => $<?= $model ?>]) }}"
+                              action="{{ action('<?= $Model ?>Controller@destroy',
+                                  ['<?= $model ?>' => $<?= $model ?>]) }}"
                               style="display: inline-block">
                             {{ csrf_field() }}
                             {{ method_field("DELETE") }}
