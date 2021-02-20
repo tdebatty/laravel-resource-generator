@@ -25,9 +25,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
@@ -38,8 +35,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -59,9 +54,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -75,9 +67,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  <?= $Model ?> $<?= $model ?>
-     * @return \Illuminate\Http\Response
      */
     public function show(<?= $Model ?> $<?= $model ?>)
     {
@@ -86,9 +75,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  <?= $Model ?> $<?= $model ?>
-     * @return \Illuminate\Http\Response
      */
     public function edit(<?= $Model ?> $<?= $model ?>)
     {
@@ -97,10 +83,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  <?= $Model ?> $<?= $model ?>
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, <?= $Model ?> $<?= $model ?>)
     {
@@ -113,9 +95,6 @@ class <?= $Model ?>Controller extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
