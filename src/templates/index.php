@@ -27,12 +27,12 @@ $Models = Str::plural($Model);
         <tr>
             <td>{{ $<?= $model ?>->name }}</td>
             <td class="text-right">
-                <a class="btn btn-primary btn-sm"
+                <a class="btn btn-primary btn-sm my-1"
                    href="{{ action('<?= $Model ?>Controller@show', ['<?= $model ?>' => $<?= $model ?>]) }}">
                     <?= $icons['show'] ?> Show
                 </a>
 
-                <a class="btn btn-primary btn-sm"
+                <a class="btn btn-primary btn-sm my-1"
                    href="{{ action('<?= $Model ?>Controller@edit', ['<?= $model ?>' => $<?= $model ?>]) }}">
                     <?= $icons['edit'] ?> Edit
                 </a>
@@ -42,7 +42,7 @@ $Models = Str::plural($Model);
                       style="display: inline-block">
                     {{ csrf_field() }}
                     {{ method_field("DELETE") }}
-                    <button class="btn btn-danger btn-sm">
+                    <button class="btn btn-danger btn-sm my-1">
                         <?= $icons['delete'] ?> Delete
                     </button>
                 </form>
