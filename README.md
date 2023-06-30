@@ -23,7 +23,7 @@ $ composer require tdebatty/laravel-resource-generator
 
 
 ```
-$ php artisan resource-generator:generate Post
+$ php artisan resource:make Post -i fa
 Generate migration and model...
 Generate routes...
 Generate views...
@@ -61,5 +61,5 @@ The generated code is vanilla Laravel code (i.e. views use Blade syntax with no 
 
 The generator can also add icons using following icon sets:
 
-* Font Awesome 5 : ```php artisan resource-generator:generate Model -i fa```
-* Font Awesome 4 : ```php artisan resource-generator:generate Model -i fa4```
+* Font Awesome 5 : ```php artisan resource:make Model -i fa```
+* Font Awesome 4 : ```php artisan resource:make Model -i fa4```
