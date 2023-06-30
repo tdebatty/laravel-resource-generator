@@ -88,13 +88,15 @@ class GeneratorCommand extends Command
 
         $resolver = new EngineResolver();
         $resolver->register('php', function () {
-            return new PhpEngine();
+            $app = app();
+            return new PhpEngine($app['files']);
         });
 
         $app = app();
         $finder = new FileViewFinder($app['files'], [__DIR__ . '/templates']);
         $factory = new Factory($resolver, $finder, $app['events']);
         $factory->addExtension('php', 'php');
+        
         $index = $factory->make('index')
             ->with('Model', $model)
             ->with("icons", $this->icons($icons))

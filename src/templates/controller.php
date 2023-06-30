@@ -11,7 +11,6 @@ namespace App\Http\Controllers;
 
 use App\<?= $Model ?>;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class <?= $Model ?>Controller extends Controller
