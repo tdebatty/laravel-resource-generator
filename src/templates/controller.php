@@ -24,13 +24,13 @@ class <?= $Model ?>Controller extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Get validation rules for an incoming request.
      */
-    protected function validator(array $data)
+    protected function rules() : array
     {
-        return Validator::make($data, [
-            'name' => 'required|string|regex:/^[a-zA-Z0-9\s-\.]+$/|max:255'
-        ]);
+        return [
+            'name' => 'required|string|max:255'
+        ];
     }
 
     /**
@@ -45,7 +45,6 @@ class <?= $Model ?>Controller extends Controller
      * Show the form for creating a new resource.
      * We use the same view for create and update => provide an empty <?= $Model ?>.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -57,7 +56,7 @@ class <?= $Model ?>Controller extends Controller
      */
     public function store(Request $request)
     {
-        $this->validator($request->all())->validate();
+        $request->validate($this->rules());
 
         $<?= $model ?> = new <?= $Model ?>();
         $<?= $model ?>->name = $request->name;
@@ -86,7 +85,7 @@ class <?= $Model ?>Controller extends Controller
      */
     public function update(Request $request, <?= $Model ?> $<?= $model ?>)
     {
-        $this->validator($request->all())->validate();
+        $request->validate($this->rules());
 
         $<?= $model ?>->name = $request->name;
         $<?= $model ?>->save();
@@ -96,9 +95,9 @@ class <?= $Model ?>Controller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(<?= $Model ?> $<?= $model ?>)
     {
-        <?= $Model ?>::find($id)->delete();
+        $<?= $model ?>->delete();
         return redirect(action("<?= $Model ?>Controller@index"));
     }
 }
