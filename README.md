@@ -16,7 +16,7 @@ With this plugin, you immediately get working code:
 ## Installation
 
 ```
-$ composer require tdebatty/laravel-resource-generator
+$ composer require --dev tdebatty/laravel-resource-generator
 ```
 
 ## Example
